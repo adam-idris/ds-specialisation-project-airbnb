@@ -1,8 +1,6 @@
 import pandas as pd
 from ast import literal_eval
 
-df = pd.read_csv('listing.csv')
-
 def clean_tabular_data(df):
 
     def remove_rows_with_missing_ratings(df):
@@ -50,5 +48,7 @@ def clean_tabular_data(df):
     
     return df
 
-df = clean_tabular_data(df)
-df.to_csv('cleaned_tabular_data.csv')
+if __name__ == '__main__':
+    df = pd.read_csv('listing.csv')
+    df = clean_tabular_data(df)
+    df.to_csv('cleaned_tabular_data.csv')
